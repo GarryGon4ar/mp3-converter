@@ -3,6 +3,7 @@ import youtube_dl
 # from django.urls import reverse_lazy
 # from django.views.generic import FormView
 # from .models import Song
+from main.models import Song
 from .forms import DownloadForm
 
 # class DownloadView(FormView):
@@ -50,8 +51,8 @@ def download(request):
     if request.method == "POST":
         form = DownloadForm(request.POST) #if no files
         if form.is_valid():
-            form.save()
             video_url = form.cleaned_data.get('url')
+            Song.objects.create(link=video_url)
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
@@ -67,4 +68,5 @@ def download(request):
     context = {
         'form': form,
     }
+
     return render(request, "index.html", context)

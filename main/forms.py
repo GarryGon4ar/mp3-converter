@@ -7,5 +7,8 @@ class DownloadForm(forms.ModelForm):
         exclude = ['link']
     url = forms.RegexField(regex=r'^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$')
 
+    def __unicode__(self):
+        return "Request " + '#' + str(self.id)
+
 
 
