@@ -13,7 +13,7 @@ To clone and run this repository, you'll need Git installed on your computer. I 
 
 ```
 $ git clone https://github.com/GarryGon4ar/mp3-converter.git
-$ python3 -m venv sample_environment
+$ virtualenv sample_environment -p python3
 $ source sample_environment/bin/activate
 $ cd mp3-converter
 $ pip install -r requirements.txt
