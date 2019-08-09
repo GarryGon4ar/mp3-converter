@@ -1,7 +1,7 @@
-FROM python:3
+FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /youtubedl
 WORKDIR /youtubedl
-COPY requirements.txt /youtubedl/
+ADD requirements.txt /youtubedl/
 RUN pip install -r requirements.txt
-COPY . /youtubedl/
+ADD . /youtubedl/

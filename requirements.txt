@@ -1,5 +1,7 @@
-Django==2.2.1
-python-decouple==3.1
+Django==2.2.4
+django-environ==0.4.5
+django-dotenv==1.4.2
+mysqlclient==1.4.2.post1
 pytz==2019.1
 sqlparse==0.3.0
 youtube-dl==2019.5.20
